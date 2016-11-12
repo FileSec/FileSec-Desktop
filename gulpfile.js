@@ -27,15 +27,6 @@ gulp.task('clean:styles', (cb) => {
   ], cb);
 });
 
-gulp.task('inject-dependencies', function() {
-  return gulp.src(views)
-    .pipe(wiredep())
-    .pipe(plugins.rename(function(path) {
-      path.extname = '.html';
-    }))
-    .pipe(gulp.dest(viewsRoot));
-});
-
 gulp.task('build-sass', () => {
   return gulp.src(sassRoot+'/*.scss')
     .pipe(plugins.plumber())
@@ -60,7 +51,7 @@ gulp.task('watch-sass', () => {
 // ############################################################################################
 // ############################################################################################
 
-gulp.task('default', ['build-sass', 'inject-dependencies'], () => {
+gulp.task('default', ['build-sass'], () => {
   gutil.log('Transposing Sass...');
 });
 
