@@ -7,5 +7,5 @@
       "authDomain": "filesec-e82e5.firebaseapp.com",
       "databaseURL": "https://filesec-e82e5.firebaseio.com"
     })
-    .value('SERVER_URL', 'http://localhost:1337/');
+    .value('SERVER_URL', 'http://557d3359.ngrok.io:80/');
 })();

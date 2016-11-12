@@ -19,6 +19,8 @@
   "dependencies": {
     "angular": "1.4.9",
     "skeleton": "2.0.4",
-    "angular-mocks": "1.4.9"
+    "angular-mocks": "1.4.9",
+    "angular-fileupload": "angular-filereader#^1.0.4",
+    "angular-md5": "^0.1.10"
   }
 }

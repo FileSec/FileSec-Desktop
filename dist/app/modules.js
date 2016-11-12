@@ -3,7 +3,7 @@
   angular.module('FileSec-Utilities', ['FileSec-Configuration']);
 
   //Controller Modules
-  angular.module('FileSec-Home', ['FileSec-Utilities']);
+  angular.module('FileSec-Home', ['FileSec-Utilities', 'angular-md5', 'filereader', 'btford.socket-io']);
 
   angular.module('FileSec', ['FileSec-Home', 'ui.router'])
   .config(config);
@@ -19,6 +19,13 @@
           url: '/home',
           controller: 'HomeController',
           templateUrl: 'partials/home.html'
+      })
+      .state({
+          name: 'home.pin',
+          url: '/pin',
+          controller: 'PinController',
+          params: {pin: null},
+          templateUrl: 'partials/pin.html'
       })
       .state({
           name: 'login',
