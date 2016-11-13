@@ -1,10 +1,17 @@
 <div class="container">
-  <form>
-    <div class="row">
-      <div class="five columns">
-        <label for="fileUpload">Upload New File</label>
-        <input class="u-full-width" type="file" id="fileUpload" onchange="angular.element(this).scope().upload()">
-      </div>
+  <div class="row">
+    <div class="twelve columns">
+      <h1>FileSec</h1>
     </div>
-  </form>
+  </div>
+  <div class="row">
+    <div class="six columns">
+      <label for="fileUpload">Encrypt New File</label>
+      <input class="u-full-width" type="file" id="fileUpload" onchange="angular.element(this).scope().upload(true)">
+    </div>
+    <div class="six columns">
+      <label for="fileDecrypt">Decrypt File</label>
+      <input class="u-full-width" type="file" id="fileDecrypt" onchange="angular.element(this).scope().upload(false)">
+    </div>
+  </div>
 </div>

@@ -1,9 +1,12 @@
 (function() {
   //Service Modules
-  angular.module('FileSec-Utilities', ['FileSec-Configuration']);
+  angular.module('FileSec-Utilities', ['FileSec-Configuration', 'mdo-angular-cryptography', 'filereader'])
+  .config(['$cryptoProvider', function($cryptoProvider){
+    $cryptoProvider.setCryptographyKey('ABCD123');
+  }]);
 
   //Controller Modules
-  angular.module('FileSec-Home', ['FileSec-Utilities', 'angular-md5', 'filereader', 'btford.socket-io']);
+  angular.module('FileSec-Home', ['FileSec-Utilities', 'angular-md5', 'btford.socket-io']);
 
   angular.module('FileSec', ['FileSec-Home', 'ui.router'])
   .config(config);
@@ -21,7 +24,7 @@
           templateUrl: 'partials/home.html'
       })
       .state({
-          name: 'home.pin',
+          name: 'pin',
           url: '/pin',
           controller: 'PinController',
           params: {pin: null},

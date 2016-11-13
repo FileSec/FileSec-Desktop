@@ -11,6 +11,10 @@
       password: "password"
     };
 
+    if(firebase.auth().currentUser !== null) {
+      $state.go('home');
+    }
+
     $scope.login = function() {
       firebase.auth().signInWithEmailAndPassword($scope.loginCreds.email, $scope.loginCreds.password)
       .then(function(user) {
